@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @Author qcl
- * @Description
+ * @Description 消费者应答
  * @Date 5:20 PM 3/13/2023
  */
 @Slf4j
@@ -61,9 +61,15 @@ public class ReceiveCustomerController {
     }
 
     @KafkaListener(id = topicCroup, topics = topic)
+    @SendTo("hello3Group1")
+    public void listen(String msg) {
+        log.info("listen receive msg >>>  {}", msg); // listen receive msg >>>  1
+    }
+
+    @KafkaListener(id = "hello3Group1", topics = topic)
     @SendTo
-    public String listen(String msg) {
-        log.info("receive msg >>>  {}", msg); // receive msg >>>  1
-        return "I do it >>> " +msg;
+    public String listen1(String msg) {
+        log.info("listen1 receive msg >>>  {}", msg); // listen1 receive msg >>>  1
+        return "listen1: I do it >>> " +msg;
     }
 }
