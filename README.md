@@ -4,7 +4,7 @@
 
 - [一起来学kafka之Kafka集群搭建](https://mp.weixin.qq.com/s/XV2GUwz8mKSNmdI5YWwYVg)
 - [一起来学kafka之整合SpringBoot基本使用](https://mp.weixin.qq.com/s/wgE21lrcjEYWP5-2kQeACA)
-
+- [一起来学kafka之整合SpringBoot深入使用(一)](https://mp.weixin.qq.com/s/fI4KNz497qUYueWuOkoUNA)
 ## 项目源码(源码已更新 欢迎star⭐️)
 
 - [springboot-kafka-all: https://github.com/qiuChengleiy/springboot-kafka-all](https://github.com/qiuChengleiy/springboot-kafka-all)

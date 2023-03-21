@@ -5,11 +5,6 @@ spring:
   kafka:
     producer:
       bootstrap-servers: 127.0.0.1:9092
-      transaction-id-prefix: kafka_.
-
-
-
-
-
-
+      # transaction-id-prefix: kafka_.
+      retries: 3
 
