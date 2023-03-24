@@ -12,6 +12,7 @@ import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.core.KafkaAdmin;
 import org.springframework.kafka.listener.ContainerProperties;
+import org.springframework.kafka.support.converter.StringJsonMessageConverter;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -62,7 +63,10 @@ public class KafkaConfig {
         factory.getContainerProperties().setPollTimeout(3000);
 
         //设置为批量消费，每个批次数量在Kafka配置参数中设置ConsumerConfig.MAX_POLL_RECORDS_CONFIG
-        //factory.setBatchListener(true);
+        factory.setBatchListener(true);
+        // 设置消息转换器
+        factory.setMessageConverter(new StringJsonMessageConverter());
+
         factory.getContainerProperties().setAckMode(ContainerProperties.AckMode.MANUAL_IMMEDIATE);
         return factory;
     }
